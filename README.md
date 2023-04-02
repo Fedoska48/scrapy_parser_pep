@@ -20,27 +20,27 @@ Telegram: [@nsfed](https://t.me/nsfed)
 
 Клонирование репозитория:
 
-*git clone git@github.com:Fedoska48/scrapy_parser_pep.git*
+[`git clone git@github.com:Fedoska48/scrapy_parser_pep.git`](https://github.com/Fedoska48/scrapy_parser_pep)
 
 Необходимо создать вирутальное окружение (способ зависит от операционной системы)
 
 Здесь и ниже для Windows:
 
-*python -m venv venv*
+`python -m venv venv`
 
 Активировать виртуальное окружение:
 
-*source venv/Scripts/activate*
+`source venv/Scripts/activate`
 
 Установить зависимости:
 
-*pip install -r requirements.txt*
+`pip install -r requirements.txt`
 
 ## Инструкция:
 
 Находясь в директории проекта, необходимо вызвать в терминале команду:
 
-***scrapy crawl pep***
+`scrapy crawl pep`
 
 В папке **/results** находятся результаты парсинга в формате .csv
 

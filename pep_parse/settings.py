@@ -2,9 +2,12 @@ from pathlib import Path
 
 # settings
 BOT_NAME = 'pep_parse'
-SPIDER_MODULES = ['pep_parse.spiders']
 NEWSPIDER_MODULE = 'pep_parse.spiders'
+SPIDER_MODULES = [NEWSPIDER_MODULE]
 ROBOTSTXT_OBEY = True
+
+# domains
+PEP_DOMAIN = 'peps.python.org'
 
 # dir
 BASE_DIR = Path(__file__).parent.parent

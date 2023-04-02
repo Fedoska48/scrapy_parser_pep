@@ -22,9 +22,9 @@ class PepParsePipeline:
         file_dir = self.results_dir / filename
         with open(file_dir, mode='w', encoding='utf-8') as f:
             csv.writer(
-                f, dialect=csv.unix_dialect
+                f, dialect=csv.unix_dialect, quoting=csv.QUOTE_NONE
             ).writerows([
                 ('Статус', 'Количество'),
                 *self.count_statuses.items(),
-                ('Total', sum(self.count_statuses.values()))
+                ('Всего', sum(self.count_statuses.values()))
             ])
