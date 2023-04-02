@@ -13,7 +13,7 @@ class PepSpider(scrapy.Spider):
 
     def parse(self, response):
         for row in response.css(
-                '#numerical-index tbody > tr a::attr(href)'
+            '#numerical-index tbody > tr a::attr(href)'
         ).getall():
             yield response.follow(
                 urljoin(self.start_urls[0], row),
@@ -22,10 +22,8 @@ class PepSpider(scrapy.Spider):
 
     def parse_pep(self, resposne):
         number, name = resposne.css('h1.page-title::text').get().split(' – ')
-        yield PepParseItem(
-            dict(
-                number=number,
-                name=name,
-                status=resposne.css('dd.field-even > abbr::text').get()
-            )
-        )
+        yield PepParseItem(dict(
+            number=number,
+            name=name,
+            status=resposne.css('dd.field-even > abbr::text').get()
+        ))
