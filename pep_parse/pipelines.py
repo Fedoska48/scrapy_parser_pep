@@ -7,10 +7,13 @@ from pep_parse.settings import BASE_DIR, DATETIME_FORMAT, RESULTS_FOLDER
 
 class PepParsePipeline:
 
-    def open_spider(self, spider):
-        self.count_statuses = defaultdict(int)
+    def __init__(self):
         self.results_dir = BASE_DIR / RESULTS_FOLDER
         self.results_dir.mkdir(exist_ok=True)
+
+    def open_spider(self, spider):
+        self.count_statuses = defaultdict(int)
+
 
     def process_item(self, item, spider):
         self.count_statuses[item.get('status')] += 1
